@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FcFc"
+    tools:context="com.example.user.samplelog.signup">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp">
+        <EditText
+            android:id="@+id/edtphone"
+            android:hint="PHONE NO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@android:color/black"
+            android:text="8186885188"
+            android:textColor="@android:color/black"
+            android:textSize="34sp"
+            android:inputType="phone"
+            android:maxLength="10"
+            />
+        <EditText
+            android:id="@+id/edtname"
+            android:hint="NAME"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@android:color/black"
+            android:text="VAMSIDHAR"
+            android:textColor="@android:color/black"
+            android:textSize="34sp"
+            android:inputType="text"
+            android:maxLength="10"
+            />
+        <EditText
+            android:id="@+id/edtpssd"
+            android:hint="PASSWORD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@android:color/black"
+            android:text="12346"
+            android:textColor="@android:color/black"
+            android:textSize="34sp"
+            android:inputType="textPassword"
+            android:maxLength="10"
+            />
+    </LinearLayout>
+    <Button
+        android:id="@+id/signup"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/buttonshape"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/signup"
+        android:textColor="#f000"/>
+
+
+</RelativeLayout>
