@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent signin=new Intent(MainActivity.this, com.example.user.samplelog.signin.class);
                 startActivity(signin);
+                finish();
 
             }
         });

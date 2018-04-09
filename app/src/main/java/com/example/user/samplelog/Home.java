@@ -1,5 +1,6 @@
 package com.example.user.samplelog;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -33,6 +34,7 @@ public class Home extends AppCompatActivity
     TextView txtfullname;
     RecyclerView recycler_menu;
     RecyclerView.LayoutManager layoutManager;
+    FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter;
 
 
     @Override
@@ -77,7 +79,7 @@ public class Home extends AppCompatActivity
 
     private void loadmenu() {
 
-        FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter=new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class, R.layout.menu_item,MenuViewHolder.class,category) {
+        adapter=new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class, R.layout.menu_item,MenuViewHolder.class,category) {
             @Override
             protected void populateViewHolder(MenuViewHolder viewHolder, Category model, int position) {
                 viewHolder.txtMenuname.setText(model.getName());
@@ -86,7 +88,10 @@ public class Home extends AppCompatActivity
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(Home.this,""+clickItem.getName(),Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(Home.this,""+clickItem.getName(),Toast.LENGTH_SHORT).show();
+                        Intent foodlist=new Intent(Home.this,FoodList.class);
+                        foodlist.putExtra("CategoryId",adapter.getRef(position).getKey());
+                        startActivity(foodlist);
                     }
                 });
 
