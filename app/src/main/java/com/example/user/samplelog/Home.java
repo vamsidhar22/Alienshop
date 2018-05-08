@@ -52,8 +52,8 @@ public class Home extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent cartIntent=new Intent(Home.this,Cart.class);
+                startActivity(cartIntent);
             }
         });
 
@@ -134,10 +134,17 @@ public class Home extends AppCompatActivity
         if (id == R.id.nav_menu) {
             // Handle the camera action
         } else if (id == R.id.nav_cart) {
+            Intent cartintent=new Intent(Home.this,Cart.class);
+            startActivity(cartintent);
 
         } else if (id == R.id.nav_orders) {
+            Intent orderintent=new Intent(Home.this,OrderStatus.class);
+            startActivity(orderintent);
 
         } else if (id == R.id.nav_logout) {
+            Intent signin=new Intent(Home.this, com.example.user.samplelog.signin.class);
+            signin.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(signin);
 
         }
 
